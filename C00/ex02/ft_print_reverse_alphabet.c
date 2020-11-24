@@ -20,12 +20,13 @@ int main(){
 	return(0);
 }
 
-void ft_print_reverse_alphabet(void){
+void	ft_print_reverse_alphabet(void)
+{
+	char rstr = 122;
 
-	char alpha[]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-	
-	int num = sizeof(alpha)/sizeof(char);
-
-	for(int i=0; i<num; i++)
-		write(1,&alpha[i],sizeof(char));
+	while(rstr > 96)
+	{	
+		write(1,&rstr,sizeof(char));
+		rstr--;
+	}
 }

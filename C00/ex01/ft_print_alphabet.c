@@ -16,15 +16,17 @@
 void ft_print_alphabet(void);
 
 int main(){
-	char alpha[]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-	ft_print_alphabet(*alpha);
+	//char alpha[]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+	ft_print_alphabet();
 	return(0);
 }
 
-void ft_print_alphabet(*alpha){
-
-	int num = sizeof(alpha)/sizeof(char);
-
-	for(int i=0; i<num; i++)
-		write(1,&alpha[i],sizeof(char));	
+void	ft_print_alphabet()
+{
+	char str = 97;
+	while (str < 123)
+	{
+		write(1, &str, sizeof(char));
+		str++;
+	}	
 }
