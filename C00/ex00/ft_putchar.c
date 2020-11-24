@@ -11,6 +11,16 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
+
+void	ft_putchar(char c);
+
+int	main(){
+	
+	char a = 'F';
+	ft_putchar(a);
+
+}
 
 void	ft_putchar(char c)
 {
