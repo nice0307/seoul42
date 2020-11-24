@@ -13,17 +13,19 @@
 #include <stdio.h>
 #include <unistd.h>
 
+
 void	ftc(int *nbr);
 
 int	main(){
 
-	int *nb;
-	ftc(nb);
-	printf("%d", *nb);
+	int result;
+	ftc(&result);
+	printf("%d", result);
+	write(1, &result, sizeof(int));
 	return(0);
 }
 
 void	ftc(int *nbr)
 {
-	*nbr = 42;
+	*nbr = 40;
 }
