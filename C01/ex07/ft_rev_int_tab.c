@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wookchoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 19:48:33 by wookchoi          #+#    #+#             */
-/*   Updated: 2020/11/25 12:37:55 by wookchoi         ###   ########.fr       */
+/*   Created: 2020/11/25 15:24:21 by wookchoi          #+#    #+#             */
+/*   Updated: 2020/11/25 16:25:26 by wookchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
 
-void ft_swap(int *a, int *b);
+void ft_rev_int_tab(int *tab, int size);
 
 int main(){
-	int a = 3;
-	int b = 4;
+	int tab[] = {1, 2, 3, 4, 5, 21, 34, 45};
+	int size = sizeof(tab)/sizeof(tab[0]);
 	
-	ft_swap(&a, &b);
-	printf("%d %d", a, b) ;
-	//write(1,&b, sizeof(int));
+	printf("%d ", size);
+	ft_rev_int_tab(tab, size);
+
 	return(0);
 }
 
-void	ft_swap(int *a, int *b)
+void	ft_rev_int_tab(int *tab, int size)
 {
+	int i;
 	int swap;
 
-	swap = *b;
-	*b = *a;
-	*a = swap;
+	i = 0;
+	while(i < size / 2)
+	{
+		swap = tab[size - 1 - i];
+		tab[size - 1 - i] = tab[i];
+		tab[i] = swap;
+		i++;
+	}
+	for (int j=0; j<size; j++)
+		printf("%d, ", tab[j]);
 }

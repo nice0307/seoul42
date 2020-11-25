@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wookchoi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/25 11:36:51 by wookchoi          #+#    #+#             */
+/*   Updated: 2020/11/25 20:58:03 by wookchoi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdio.h>
 
@@ -5,40 +17,59 @@ void    ft_putnbr(int nb);
 
 int     main()
 {
-	int a = 102;
+	int a = 12345;
 	ft_putnbr(a);
 	return(0);
 }       
 
-void    ft_putnbr(int nb)
+void	ft_putnbr(int nb)
 {
-	int input = nb, i, j=10, count;
+	int i;
+	int j;
+	int count;
+	char temp;
+	int size;
 
-	for(i = 0, j = 1; i < 10; i++, j *=10)
+	i = 0;
+	j = 1;
+	while (i < 10)
 	{
-		if(input / j == 0)
+		if (nb / j == 0)
 		{
-			count = i - 1;
-			break;
+			count = i;
+			break ;
 		}
+		i++;
+		j *= 10;
 	}
+	char str[count];
 
-	char str[count + 1];
-	
-	for(i = 0; i <= count; i++)
+//	i = 0;
+
+	while (count > 0 )
 	{
-		str[i] = input % 10 + '0';
-		input -=input % 10;
-		input /= 10;
+		str[count - 1] = nb % 10 + 48;
+		nb -= nb % 10;
+		nb /= 10;
+		count--;
 	}
-	int size = sizeof(str)/sizeof(char);
-	for(i = 0; i < size / 2; i++)
-	{
-		char temp = str[i];
-		str[i] = str[(size - 1) - i];
-		str[(size - 1) - i] = temp;
-	}
-		write(1, str, sizeof(char)*size);
-	       	
+//	while (i < count)
+//	{
+//		str[i] = nb % 10 + 48;
+//		nb -= nb % 10;
+//		nb /= 10;
+//		i++;
+//	}
+//	size = sizeof(str);
+//	printf("%d ", size);
+//	i = 0;
+//	while (i < size / 2)
+//	{
+//		temp = str[i];
+//		str[i] = str[(size - 1) - i];
+//		str[(size - 1) - i] = temp;
+//		i++;
+//	}
+	write(1, str, sizeof(str)/sizeof(char));
 }
 

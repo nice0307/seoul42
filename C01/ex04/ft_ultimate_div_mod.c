@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wookchoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 09:48:52 by wookchoi          #+#    #+#             */
-/*   Updated: 2020/11/25 09:51:50 by wookchoi         ###   ########.fr       */
+/*   Created: 2020/11/25 12:53:53 by wookchoi          #+#    #+#             */
+/*   Updated: 2020/11/25 13:00:58 by wookchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_is_negative(int n)
+void ft_ultimate_div_mod(int *a, int *b);
+
+int main(){
+	int a = 13;
+	int b =4;
+	printf("%d / %d =", a, b);
+	ft_ultimate_div_mod(&a, &b);
+	printf("%d and %d", a, b);
+	return(0);
+}
+
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	char pos;
-	char neg;
+	int temp;
 
-	pos = 'P';
-	neg = 'N';
-	if (n >= 0)
-		write(1, &pos, 1);
-	else
-		write(1, &neg, 1);
+	temp = *a / *b;
+	*b = *a % *b;
+	*a = temp;
 }

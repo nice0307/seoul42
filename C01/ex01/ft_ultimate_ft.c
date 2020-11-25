@@ -1,28 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wookchoi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/25 12:25:14 by wookchoi          #+#    #+#             */
+/*   Updated: 2020/11/25 12:25:56 by wookchoi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
-#include <stdio.h>
-
-void	ft_ultimate_ft(int *********nbr);
-
-int	main()
-{
-	
-      	int result;
-      	int *a = &result;
-	int **b = &a;
-	int ***c = &b;
-	int ****d = &c;
-	int *****e = &d;
-	int ******f = &e;
-	int *******g = &f;
-	int ********h = &g;
-
-	ft_ultimate_ft(&h);
-	printf("%d", result);  	
-	return(0);
-}
 
 void	ft_ultimate_ft(int *********nbr)
 {
-	  
-	*********nbr=44;
+	*********nbr = 42;
 }
