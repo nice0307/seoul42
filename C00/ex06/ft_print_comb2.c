@@ -52,32 +52,20 @@ void	ft_print_comb2(void)
 				n = j + 1;
 				while (n < 10)
 				{
+					a = i + 48;
+					b = j + 48;
+					c = k + 48;
+					d = n + 48;
+					write(1, &a, 1);
+					write(1, &b, 1);
+					write(1, &sp, 1);
+					write(1, &c, 1);
+					write(1, &d, 1);
 					if (i == 9 && j == 8)
-					{
-						a = i + 48;
-						b = j + 48;
-						c = k + 48;
-						d = n + 48;
-						write(1, &a, 1);
-						write(1, &b, 1);
-						write(1, &sp, 1);
-						write(1, &c, 1);
-						write(1, &d, 1);
-					}
+						break ;
 					else
-					{
-						a = i + 48;
-						b = j + 48;
-						c = k + 48;
-						d = n + 48;
-						write(1, &a, 1);
-						write(1, &b, 1);
-						write(1, &sp, 1);
-						write(1, &c, 1);
-						write(1, &d, 1);
 						write(1, &qu, 1);
 						write(1, &sp, 1);
-					}
 					n++;
 				}
 				k++;

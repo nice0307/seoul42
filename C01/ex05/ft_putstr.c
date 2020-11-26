@@ -19,27 +19,18 @@ int main(){
 
 	char strr[] = {'S','a','l','u','t'};
 	int size = sizeof(strr);
-	printf("%d", size);
+	//char str[6];
+	printf(" %d", size);
 	ft_putstr(strr);
-
+	printf(" %s", strr);
+	//write(1, str, 6);
 	return(0);
 }
 
 void	ft_putstr(char *str)
 {
-	char *result = "Saddfsfsdgdfblut";
-	int len = sizeof(str);
-	int i;
-
-	i = 0;
-
-	printf("%d ", len);
-
-	int llen = sizeof(result);
-	printf("%d", llen);
-	while(str[8])
-	{
-		write(1, result[i], 100);
-		i++;
-	}
+	int sizz = sizeof(*str);
+	printf("-%d-", sizz);
+	printf("%s", str);
+	write(1, str, 1);
 }

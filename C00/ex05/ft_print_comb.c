@@ -44,22 +44,18 @@ void	ft_print_comb(void)
 			comb2 = j + 48;
 			k = j + 1;
 			while (k < 10)
-			{
+			{	
 				comb3 = k + 48;
+				write(1, &comb1, 1);
+				write(1, &comb2, 1);
+				write(1, &comb3, 1);
 				if (i == 7 && j == 8 && k == 9)
-				{
-					write(1, &comb1, 1);
-					write(1, &comb2, 1);
-					write(1, &comb3, 1);
-				}
+					break ;
 				else
-				{
-					write(1, &comb1, 1);
-					write(1, &comb2, 1);
-					write(1, &comb3, 1);
+				
 					write(1, &qu, 1);
 					write(1, &sp, 1);
-				}
+				
 				k++;
 			}
 			j++;

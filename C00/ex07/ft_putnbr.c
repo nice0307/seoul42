@@ -17,7 +17,7 @@ void    ft_putnbr(int nb);
 
 int     main()
 {
-	int a = 12345;
+	int a = 42;
 	ft_putnbr(a);
 	return(0);
 }       
@@ -43,9 +43,6 @@ void	ft_putnbr(int nb)
 		j *= 10;
 	}
 	char str[count];
-
-//	i = 0;
-
 	while (count > 0 )
 	{
 		str[count - 1] = nb % 10 + 48;
@@ -53,23 +50,5 @@ void	ft_putnbr(int nb)
 		nb /= 10;
 		count--;
 	}
-//	while (i < count)
-//	{
-//		str[i] = nb % 10 + 48;
-//		nb -= nb % 10;
-//		nb /= 10;
-//		i++;
-//	}
-//	size = sizeof(str);
-//	printf("%d ", size);
-//	i = 0;
-//	while (i < size / 2)
-//	{
-//		temp = str[i];
-//		str[i] = str[(size - 1) - i];
-//		str[(size - 1) - i] = temp;
-//		i++;
-//	}
 	write(1, str, sizeof(str)/sizeof(char));
 }
-

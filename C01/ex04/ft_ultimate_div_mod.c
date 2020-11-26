@@ -10,19 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void ft_ultimate_div_mod(int *a, int *b);
-
-int main(){
-	int a = 13;
-	int b =4;
-	printf("%d / %d =", a, b);
-	ft_ultimate_div_mod(&a, &b);
-	printf("%d and %d", a, b);
-	return(0);
-}
-
 void	ft_ultimate_div_mod(int *a, int *b)
 {
 	int temp;
