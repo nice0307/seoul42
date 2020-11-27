@@ -23,23 +23,23 @@ int	main()
 
 void	ft_print_comb2(void)
 {
-	char a;
-	char b;
-	char c;
-	char d;
-	char sp;
-	char qu;
-	int i;
-	int j;
-	int k;
-	int n;
+	char	a;
+	char	b;
+	char	c;
+	char	d;
+	char	sp;
+	char	qu;
+	int	i;
+	int	j;
+	int	k;
+	int	n;
 
-	a = 0;
-	b = 0;
-	c = 0;
-	d = 0;
-	sp = ' ';
-	qu = ',';
+	a	= 0;
+	b	= 0;
+	c	= 0;
+	d	= 0;
+	sp	= ' ';
+	qu	= ',';
 	i = 0;
 	while (i < 10)
 	{

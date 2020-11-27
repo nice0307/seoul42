@@ -2,51 +2,45 @@
 #include <stdio.h>
 
 void	ft_print_combn(int n);
-void	ft_print_combn2nd(int a);
+void	ft_print_combn2nd(int nNum, int nHandle, int nDigit, char *str);
 
 int	main()
-{
-	int num = 2;  
-	ft_print_combn(num);
+{ 
+	ft_print_combn(3);
 	return(0);
 }
 
-void	ft_print_combn(int n)
+void	ft_print_combn2nd(int nNum, int nHandle, int nDigit, char *str)
 {
-		//int num[]={0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-		//char *str="abcd";
-		//int itr = sizeof(num)/sizeof(int);
-		int i;
-		//int j;
-		int a;	
-		char qu = ' ';
-		char sp = ',';
-
-		i = 0;
-		while (i < 11 - n)
+	char	qu = ',';
+	char	sp = ' ';
+	int	i;
+	
+	i = nNum;
+	while (i < 10)
+	{
+		str[nHandle] = i + 48;
+		if (nHandle + 1 < nDigit * sizeof(char))
 		{
-			a = i + 48;
-			//j = i + 1 + 48;
-			//write(1, &a, 1);
-			ft_print_combn2nd(a);
-			if(n > 1)
-			{
-				ft_print_combn2nd(--n + 48);
-			}
-			if(i == 9)
+			ft_print_combn2nd(i + 1, nHandle + 1, nDigit, str);
+		}
+		else
+		{
+			write(1, str, nDigit);
+			if (str[nDigit - 1] == '9' && str[0] == 10 - nDigit + 48)
 			{
 				break ;
 			}
 			else
-			{
-				write(1, &sp, sizeof(char));
-				write(1, &qu, sizeof(char));
-			}
-			i++;		
-	  	}
+				
+				write(1, &qu, 1);
+				write(1, &sp, 1);
+		}
+		i++;
+	}
 }
-void	ft_print_combn2nd(int a)
+void	ft_print_combn(int n)
 {
-	write(1, &a, sizeof(char));
-	ft_print_combn2nd(--a);
+	char	strVals[9];
+	ft_print_combn2nd(0, 0, n, strVals);
 }

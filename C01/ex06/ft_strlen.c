@@ -15,14 +15,14 @@
 int ft_strlen(char *str);
 
 int main(){
-	//char *str = "Salut";
-	char str[] = {'S', 'a', 'l', 'u', 't', 't', 'f'};
+	char *str = "Sadfasfsut,.";
+	//char str[] = {'S', 'a', 'l', 'u', 't', 't', 'f'};
 	//char *str[] = {"Sss", "a", "l", "u", "t", "sdfsg"};
-	int ssize = sizeof(str)/sizeof(str[0]); 
-	int a;
+	//int ssize = sizeof(str); 
+	//int a;
 
-	printf("%d ", ssize);
-	//a = ft_strlen(str);
+	//printf("%d ", ssize);
+	//ft_strlen(str);
 	printf("%d!!", ft_strlen(str));
 
 	return(0);
@@ -30,31 +30,12 @@ int main(){
 
 int	ft_strlen(char *str)
 {
-	int result;
-	char strr[8] = {0};
-	int a;
-	int i;
-	int len = 0;
+	int	len;
 
-	while (len)
+	len = 0;
+	while (str[len] != '\0')
 	{
-		strr[len] = str[len];
-		printf("%c", strr[len]);
 		len++;
 	}
-
-//	i = 0;
-//	while (i < 7)
-//	{
-//		strr[i] = str[i];
-//		printf("%c", strr[i]);
-//		i++;
-//	}
-//	result = sizeof(strr) / sizeof(strr[0]);
-//	//a =sizeof(strr);
-//	//printf("%d?", a);
-//	//printf("%c", strr[1]);
-
-	return(len - 1);
-
+	return(len);
 }

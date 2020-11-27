@@ -14,12 +14,12 @@
 
 void	ft_print_alphabet(void)
 {
-	char w;
+	char str;
 
-	w = 97;
-	while (w < 123)
+	str = 97;
+	while (str < 123)
 	{
-		write(1, &w, sizeof(char));
+		write(1, &str, sizeof(char));
 		str++;
 	}
 }

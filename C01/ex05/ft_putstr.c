@@ -12,25 +12,29 @@
 
 #include <stdio.h>
 #include <unistd.h>
+#include <string.h>
 
 void ft_putstr(char *str);
 
 int main(){
 
-	char strr[] = {'S','a','l','u','t'};
-	int size = sizeof(strr);
-	//char str[6];
-	printf(" %d", size);
-	ft_putstr(strr);
-	printf(" %s", strr);
-	//write(1, str, 6);
+	//char str[] = {'S','a','l','u','t', ','};
+	char *str = "Salutdfsdfsdfsfsfsdf";
+	ft_putstr(str);
 	return(0);
 }
 
 void	ft_putstr(char *str)
 {
-	int sizz = sizeof(*str);
-	printf("-%d-", sizz);
-	printf("%s", str);
-	write(1, str, 1);
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (str[i] != '\0')
+	{
+		count++;
+		i++;
+	}
+	write(1, str, count * sizeof(char));
 }
