@@ -1,39 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wookchoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 19:47:44 by wookchoi          #+#    #+#             */
-/*   Updated: 2020/11/30 20:11:05 by wookchoi         ###   ########.fr       */
+/*   Created: 2020/11/30 20:46:50 by wookchoi          #+#    #+#             */
+/*   Updated: 2020/11/30 21:50:57 by wookchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n);
+int	ft_str_is_numeric(char *str);
 
-int main(){
-	char dest[10] = {0};
-	char *src = "Salut!!";
-	int	srcc[5] = {1,2,3,4,5};
-	int n = sizeof(dest);
-	//ft_strncpy(dest, src, n);
-	//printf("%s", ft_strncpy(dest, src, n));
-	printf("%d!", n);
+int main()
+{
+	char *str = "123 ";
+
+	//ft_str_is_numeric(str);
+	printf("%d", ft_str_is_numeric(str));
+	return (0);
 }
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_str_is_numeric(char *str)
 {
-	unsigned int i;
+	int	val;
+	int	i;
 
 	i = 0;
-	while (i < n)
+	if (str[0] == '\0')
+		val = 1;
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
+		if (47 < str[i] && str[i] < 58)
+			val = 1;
+		else
+		{
+			val = 0;
+			break ;
+		}
 		i++;
 	}
-	return (dest);
+	return (val);
 }
