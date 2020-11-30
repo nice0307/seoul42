@@ -14,41 +14,59 @@
 #include <stdio.h>
 
 void    ft_putnbr(int nb);
+//void	ft_putnbrminus(unsigned int maxnb, unsigned int maxcount);
+void	ft_putnbrplus(int nb, int count);
+
 
 int     main()
 {
-	int a = 42;
+	int a = 2147483647;
 	ft_putnbr(a);
 	return(0);
 }       
 
 void	ft_putnbr(int nb)
 {
-	int i;
-	int j;
-	int count;
-	char temp;
-	int size;
+	unsigned int	maxnb;
+	unsigned int	maxcount;
+	int		count;
+	char		zero;
 
-	i = 0;
-	j = 1;
-	while (i < 10)
+	if(nb < 0)
 	{
-		if (nb / j == 0)
-		{
-			count = i;
-			break ;
-		}
-		i++;
-		j *= 10;
+		maxnb = nb * -1;
+//		ft_putnbrminus(maxnb, maxcount);
 	}
-	char str[count];
-	while (count > 0 )
+	else if(nb == 0)
 	{
-		str[count - 1] = nb % 10 + 48;
-		nb -= nb % 10;
-		nb /= 10;
-		count--;
+		zero = nb + 48;
+		write(1, &zero, 1);
 	}
-	write(1, str, sizeof(str)/sizeof(char));
+	else
+	{	
+		count = 1;
+		ft_putnbrplus(nb, count);
+	}
+}	
+
+//void	ft_putnbrminus
+
+void	ft_putnbrplus(int nb, int count)
+{	
+	int	i;
+	int 	j;
+	char	str;
+
+	i = 0; 
+	j = 1000000000 / count;
+	if (nb / j != 0)
+	{
+		str = nb / j + 48;
+		write(1, &str, 1);
+		nb = nb % j;
+		if (nb != 0)
+			ft_putnbrplus(nb, count * 10);
+	}
+	else 
+		ft_putnbrplus(nb, count * 10);
 }
