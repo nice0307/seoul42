@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wookchoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 22:04:06 by wookchoi          #+#    #+#             */
-/*   Updated: 2020/11/30 22:09:10 by wookchoi         ###   ########.fr       */
+/*   Created: 2020/12/02 19:29:20 by wookchoi          #+#    #+#             */
+/*   Updated: 2020/12/02 23:03:15 by wookchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,43 @@
 #include <string.h>
 #include <unistd.h>
 
-int	ft_str_is_uppercase(char *str);
+int	ft_strcmp(char *s1, char *s2);
 
 int	main(void)
 {
-	char *str = "";
+	char	*s1 = "Salut";
+	char	*s2 = "Salut3ef";
 
-	printf("%d", ft_str_is_uppercase(str));
+	//desttt = ft_strcpy(dest, src);
+	//strncpy(dest, isrc, 4);
+	//char destt = ft_strcpy(dest, src);
+	//write(1, dest, 5);
+	printf("%d", ft_strcmp(s1, s2));
 	return (0);
 }
 
-int	ft_str_is_uppercase(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int	val;
 	int	i;
+	int	val;
 
 	i = 0;
-	if (str[0] == '\0')
-		val = 1;
-	while (str[i] != '\0')
+	val = 0;
+	printf("%s %s\n", s1, s2);
+	while (s1[i] != '\0' || s2[i] != '\0')
 	{
-		if (64 < str[i] && str[i] < 91)
-			val = 1;
-		else
+		if (s1[i] < s2[i])
 		{
-			val = 0;
+			val = -1;
 			break ;
 		}
+		else if (s1[i] > s2[i])
+		{
+			val = 1;
+			break ;
+		}
+		else
+			val = 0;
 		i++;
 	}
 	return (val);
