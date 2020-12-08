@@ -4,36 +4,27 @@
 
 int	ft_is_prime(int nb);
 
-
-int	ft_is_prime(int nb)  //ex06
+int	ft_is_prime(int nb)
 {
-	int	i;
-
+	int i;
 	i = 2;
-
 	if (nb < 2)
-	{
-		return 0;
-	}
-
+		return (0);
 	while (i < nb)
 	{
 		if (nb % i == 0)
-		{
-			return 0;
-		}
-
+			return (0);
 		i++;
 	}
 
-	return 1;
+	return (1);
 }
 
-int	main(int argc) //char *argv[])
+int	main(void) //char *argv[])
 {
 	int	nresult;
 
-	nresult =ft_is_prime(83);  //ex06
+	nresult =ft_is_prime(844);  //ex06
 
 	printf("%d", nresult);
 

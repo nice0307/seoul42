@@ -17,8 +17,10 @@ int	ft_fibonacci(int index);
 
 int	ft_fibonacci(int index)
 {
-	if (index <= 2 && index >= 0)
+	if (index <= 2 && index > 0)
 		return (1);
+	else if (index == 0)
+		return (0);
 	else if (index < 0)
 		return (-1);
 	else
@@ -29,7 +31,7 @@ int	main(void) //char *argv[])
 {
 	int	nresult;
 
-	nresult = ft_fibonacci(-234);  // ex04
+	nresult = ft_fibonacci(5);  // ex04
 
 
 	printf("%d", nresult);
