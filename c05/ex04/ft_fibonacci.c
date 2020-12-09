@@ -6,7 +6,7 @@
 /*   By: wookchoi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 15:27:29 by wookchoi          #+#    #+#             */
-/*   Updated: 2020/12/07 15:43:06 by wookchoi         ###   ########.fr       */
+/*   Updated: 2020/12/09 11:29:11 by wookchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(void) //char *argv[])
 {
 	int	nresult;
 
-	nresult = ft_fibonacci(5);  // ex04
+	nresult = ft_fibonacci(2);  // ex04
 
 
 	printf("%d", nresult);

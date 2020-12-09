@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_params.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wookchoi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/09 13:53:20 by wookchoi          #+#    #+#             */
+/*   Updated: 2020/12/09 13:56:36 by wookchoi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <unistd.h>
 
@@ -11,7 +23,7 @@ int	main(int argc, char **argv)
 	int	len;
 
 	i = 1;
-	while (i < argc) 
+	while (i < argc)
 	{
 		j = i + 1;
 		while (j < argc)
@@ -33,7 +45,7 @@ int	main(int argc, char **argv)
 int	ft_swap(char **s1, char **s2)
 {
 	char *swap;
-	
+
 	swap = *s2;
 	*s2 = *s1;
 	*s1 = swap;
@@ -42,18 +54,21 @@ int	ft_swap(char **s1, char **s2)
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	while (*s1)
+	int i;
+
+	i = 0;
+	while (s1[i])
 	{
-		if (*s1 < *s2)
+		if (s1[i] < s2[i])
 			return (-1);
-		else if (*s1 > *s2)
+		else if (s1[i] > s2[i])
 			return (1);
-		*s1++;
-		*s2++;
+		*s1 = *s1 + 1;
+		*s2 = *s2 + 1;
 	}
-	if (*s1 > *s2)
+	if (s1[i] > s2[i])
 		return (1);
-	else if (*s1 < *s2)
+	else if (s1[i] < s2[i])
 		return (-1);
 	return (0);
 }
